@@ -37,8 +37,9 @@ for i in range(1, 11):
             data.append([year, wins, losses, win_percentage, goals_for, goals_against, diff, team_name])
 
 # Structuration des données avec pandas et triage par ordre croissant
+with open('result.csv', 'w', encoding='UTF8') as f:
+    writer = csv.writer(f)
 df = pd.DataFrame(data, columns=['id', 'Year', 'Wins', 'Losses', 'Wins', 'Goals For', 'Goals Against', 'pct', 'Team Name'])
 df_sorted = df.sort_values(by='+ / -', ascending=True)
 
-# Écriture des données filtrées et structurées dans le fichier CSV
-df_sorted.to_csv('result.csv', index=False, encoding='utf-8-sig')
+    

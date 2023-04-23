@@ -9,7 +9,7 @@ url = "https://www.scrapethissite.com/pages/forms/"
 # Récupération des données
 data = []
 for i in range(1, 11):
-    page_url = url + "?page=" + str(i)
+    page_url = f"{url}?page={str(i)}"
     response = requests.get(page_url)
     soup = BeautifulSoup(response.content, 'html.parser')
 
@@ -28,11 +28,7 @@ for i in range(1, 11):
             win_percentage = None
 
         year_tag = row.find('td', class_='year')
-        if year_tag is not None:
-            year = int(year_tag.text.strip()[:4])
-        else:
-            year = None
-
+        year = int(year_tag.text.strip()[:4]) if year_tag is not None else None
         if diff > 0 and goals_against < 300:
             # Nettoyage des données
             team_name = team_name.replace('\n', '')

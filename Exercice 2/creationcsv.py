@@ -3,16 +3,6 @@ from bs4 import BeautifulSoup
 import csv
 import pandas as pd
 
-with open('result.csv', 'w', newline='') as csvfile:
-    fieldnames = ['Nom', 'Différentiel', 'Buts encaissés']
-    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-    writer.writeheader()
-
-    for page in range(1, 11):
-        url = f'https://www.scrapethissite.com/pages/simple/index{page}.html'
-        response = requests.get(url)
-
-
 # URL du site web
 url = "https://www.scrapethissite.com/pages/forms/"
 

@@ -21,5 +21,5 @@ for country in countries:
     print('Nom :', name.strip())
     print('Population :', population)
     print('Capitale :', capital)
-    print('Aire :', area + "km²")
+    print('Aire :', f"{area}km²")
     print('\n')

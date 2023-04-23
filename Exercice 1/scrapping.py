@@ -14,7 +14,7 @@ for country in countries:
     capital = country.find('span', {'class': 'country-capital'}).text if country.find('span', {'class': 'country-capital'}) is not None else ''
     area = country.find('span', {'class': 'country-area'}).text if country.find('span', {'class': 'country-area'}) is not None else ''
 
-    # Nettoyage des données
+    # Nettoyage des données du site
     population = population.replace(',', '') if ',' in population else population
     area = area.replace(' km²', '') if ' km²' in area else area
 

@@ -36,10 +36,18 @@ for i in range(1, 11):
             team_name = team_name.replace('\r', '')
             data.append([year, wins, losses, win_percentage, goals_for, goals_against, diff, team_name])
 
-# Structuration des données avec pandas et triage par ordre croissant
-with open('result.csv', 'w', encoding='UTF8') as file:
+# Écriture des données dans un fichier CSV
+with open('result.csv', 'w', encoding='utf-8-sig', newline='') as file:
     writer = csv.writer(file)
-df = pd.DataFrame(data, columns=['id', 'Year', 'Wins', 'Losses', 'Wins', 'Goals For', 'Goals Against', 'pct', 'Team Name'])
-df_sorted = df.sort_values(by='+ / -', ascending=True)
+    writer.writerow(['Year', 'Wins', 'Losses', 'pct', 'Goals For', 'Goals Against', '+ / -', 'Team Name'])
+    writer.writerows(data)
+
+# Structuration des données avec pandas et triage par ordre croissant
+df = pd.DataFrame(data, columns=['Year', 'Wins', 'Losses', 'pct', 'Goals For', 'Goals Against', '+ / -', 'Team Name'])
+df
+
+
+
+
 
     

@@ -45,9 +45,3 @@ with open('result.csv', 'w', encoding='utf-8-sig', newline='') as file:
 
 # Structuration des données avec pandas et triage par ordre croissant
 df = pd.DataFrame(data, columns=['Year', 'Wins', 'Losses', 'pct', 'Goals For', 'Goals Against', '+ / -', 'Team Name'])
-
-
-
-
-
-    

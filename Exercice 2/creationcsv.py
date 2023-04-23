@@ -41,7 +41,7 @@ with open('result.csv', 'w', encoding='utf-8-sig', newline='') as file:
     writer = csv.writer(file)
     writer.writerow(['Year', 'Wins', 'Losses', 'pct', 'Goals For', 'Goals Against', '+ / -', 'Team Name'])
     writer.writerows(data)
-    print(f"{len(data)} lignes écrites dans le fichier 'result.csv'")
+    print(f"{len(data)} lignes écrites dans le fichier {result.csv}")
 
 # Structuration des données avec pandas et triage par ordre croissant
 df = pd.DataFrame(data, columns=['Year', 'Wins', 'Losses', 'pct', 'Goals For', 'Goals Against', '+ / -', 'Team Name'])
